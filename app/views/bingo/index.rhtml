@@ -7,7 +7,7 @@
     <td><img style="border: 1px solid black;" SRC="/images/bingo/<%= @action %>/<%= cell.downcase %>.png" width="95" heigth="95" alt="<%=h cell.gsub(/_\d+$/, '').humanize %>" title="<%=h cell.gsub(/_\d+$/, '').humanize %>"></td>
 <% count += 1 -%>
 <% if 17 == count -%>
-    <td><img style="border: 1px solid black;" src="/images/bingo/<%= @action %>/blank.png" width="95" height="95" alt="free" title="free"></td>
+    <td><img style="border: 1px solid black;" src="/images/bingo/<%= @action %>/free_square.png" width="95" height="95" alt="free" title="free"></td>
 <% count += 1 -%>
 <% end -%>
 <% if 0 == count %5 -%>

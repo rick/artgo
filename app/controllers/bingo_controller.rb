@@ -29,7 +29,7 @@ class BingoController < ApplicationController
       @grid[action] ||= {}
       @title[action] ||= ['A', 'R', 'T', 'G', 'O' ]
       Dir.open(File.join(@root, action)).each do |f| 
-        next if (f =~ /^blank.png$/)
+        next if (f =~ /^free_square.png$/)
         next unless (f =~ /..+\.png$/)
         @grid[action][f.gsub(/\.png$/, '')] = (f =~ /_(\d+)\.png/ ? $1.to_i : 1)
       end
