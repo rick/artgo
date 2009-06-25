@@ -1,4 +1,4 @@
-set :domain,      "rick@bingo.parchmayfarmcenter.com"
+set :domain,      "eastcore@bingo.parchmayfarmcenter.com"
 set :deploy_to,   "/home/eastcore/sites/parchmayfarmcenter/bingo"
 set :repository,  "git://github.com/rick/artgo.git"
 set :web_command, "true"  # disable dorking w/ apache
@@ -9,10 +9,5 @@ namespace :vlad do
   desc 'Restart Passenger'
   remote_task :start_app, :roles => :app do
     run "touch #{current_release}/tmp/restart.txt"
-  end
-  
-  desc 'Restarts the apache servers'
-  remote_task :start_web, :roles => :app do
-    run "sudo #{app_command} restart"
   end
 end
