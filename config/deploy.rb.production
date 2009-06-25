@@ -1,4 +1,4 @@
-set :domain,      "eastcore@bingo.parchmayfarmcenter.com"
+set :domain,      "rick@bingo.parchmayfarmcenter.com"
 set :deploy_to,   "/home/eastcore/sites/parchmayfarmcenter/bingo"
 set :repository,  "git://github.com/rick/artgo.git"
 set :web_command, "true"  # disable dorking w/ apache
