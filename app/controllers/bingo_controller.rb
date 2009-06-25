@@ -27,6 +27,7 @@ class BingoController < ApplicationController
       next unless File.directory?(File.join(@root, action))
       next if action =~ /^\.\.?$/
       @grid[action] ||= {}
+      @title[action] = ['B', 'I', 'N', 'G', 'O'] if action == 'bells_bend'
       @title[action] ||= ['A', 'R', 'T', 'G', 'O' ]
       Dir.open(File.join(@root, action)).each do |f| 
         next if (f =~ /^free_square.png$/)
