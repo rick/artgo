@@ -10,6 +10,6 @@ namespace :vlad do
   desc "concatenate deployment commands."
   task :my_deploy do
     deploy_to = (ENV['to'].blank? ? 'production' : ENV['to'])
-    system("rake vlad:update vlad:migrate vlad:start vlad:cleanup to=#{deploy_to}")
+    system("rake vlad:update vlad:start vlad:cleanup to=#{deploy_to}")
   end    
 end
