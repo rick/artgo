@@ -1,0 +1,21 @@
+<br/> <br/> <br/> <br/> <br/> <br/> <br/> 
+<center>
+<table width="475" border="0" cellpadding="0" cellspacing="0">
+  <tr>
+<% count = 0 -%>
+<% @cells.each do |cell| -%>
+    <td><img style="border: 1px solid black;" SRC="/images/bingo/<%= @action %>/<%= cell.downcase %>.png" width="95" heigth="95" alt="<%=h cell.gsub(/_\d+$/, '').humanize %>" title="<%=h cell.gsub(/_\d+$/, '').humanize %>"></td>
+<% count += 1 -%>
+<% if 17 == count -%>
+    <td><img style="border: 1px solid black;" src="/images/bingo/<%= @action %>/blank.png" width="95" height="95" alt="free" title="free"></td>
+<% count += 1 -%>
+<% end -%>
+<% if 0 == count %5 -%>
+  </tr>
+  <tr> 
+<% end -%>
+<% end -%>
+  </tr>
+</table>
+</center>
+<br/> <br/> <br/> <br/> <br/> <br/> <br/> 
