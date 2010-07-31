@@ -8,6 +8,13 @@ namespace :deploy do
     )
   end
 
-  task :post_deploy => [ :make_db_yml ]
+  task :make_dirs do
+    %w(tmp db log).each do |path|
+      dir = File.expand_path(File.join(File.dirname(__FILE__), "/../../#{path}"))
+      FileUtils.mkdir(dir) unless File.exists?(dir)
+    end
+  end
+
+  task :post_deploy => [ :make_db_yml, :make_dirs ]
 end
 
